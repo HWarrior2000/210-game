@@ -1,8 +1,7 @@
 using Raylib_cs;
-
-public class Treasure : GameObject
+public class Bomb : GameObject
 {
-     public Treasure(int x, int y) : base(x, y)
+     public Bomb(int x, int y) : base(x, y)
     {
 
     }
@@ -10,7 +9,6 @@ public class Treasure : GameObject
     {
         Raylib.DrawRectangle(_x, _y, 50, 10, Color.Blue);
     }
-
     public override void Move()
     {
         throw new NotImplementedException();
