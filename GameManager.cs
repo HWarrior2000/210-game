@@ -91,14 +91,16 @@ class GameManager
             }
         }
         //remove object from list if no longer alive
-        for (int i = 0; i < _gameObjects.Count; i++)
-        {
-            GameObject item = _gameObjects[i];
-            if (!item.IsAlive())
-            {
-                _gameObjects.RemoveAt(i);
-            }
-        }
+        _gameObjects.RemoveAll(e => !e.IsAlive());
+        //this is not good for reasons
+        // for (int i = 0; i < _gameObjects.Count; i++)
+        // {
+        //     GameObject item = _gameObjects[i];
+        //     if (!item.IsAlive())
+        //     {
+        //         _gameObjects.RemoveAt(i); 
+        //     }
+        // }
 
         //handle object spawning
         _spawnTimer += Raylib.GetFrameTime();
